@@ -192,5 +192,3 @@ while True:
         janela3.Element('uf').Update(response_json['uf'])
         janela3.Element('cidadee').Update(response_json['localidade'])
         
-        
-
