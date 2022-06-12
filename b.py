@@ -36,7 +36,6 @@ def janela_login():
         [sg.Checkbox('Salvar Login?', key='lembrar', font=("bold", 15))],
         [sg.Button('Entrar', font=("bold", 15)), sg.Button('Cadastrar', font=("bold", 15))],
         [sg.Text('', size=(10, 1), key='mensagem')],
-        [sg.HSeparator(pad=((0,0),(0,0)))],
 
     ]
 
@@ -90,11 +89,11 @@ def janela_3():
         [sg.Text(key='nome')],
 
         [sg.Text('Data de Nasc.', font=("bold", 15)),
-        sg.Combo(lista_dia, key='dia', font=("bold", 15)),
+        sg.Combo(lista_dia, key='dia', font=("bold", 15), size=(5, 1)),
         sg.Text('/'),
-        sg.Combo(lista_mes, key='mes', font=("bold", 15)),
+        sg.Combo(lista_mes, key='mes', font=("bold", 15), size=(5, 1)),
         sg.Text('/'),
-        sg.Combo(lista_ano, key='ano', font=("bold", 15)),
+        sg.Combo(lista_ano, key='ano', font=("bold", 15), size=(5, 1)),
         sg.Text('Sexo', font=("bold", 15)),
         sg.Combo(('Masculino', 'Feminino'), key='sexo', size=(10, 1), font=("bold", 15))],
 
@@ -191,4 +190,6 @@ while True:
         janela3.Element('bairro').Update(response_json['bairro'])
         janela3.Element('uf').Update(response_json['uf'])
         janela3.Element('cidadee').Update(response_json['localidade'])
+        print(response)
+        print(response_json)
         
