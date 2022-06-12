@@ -116,11 +116,11 @@ while True:
         janela1.hide()
         janela2 = janela_cadastro()
     if window == janela2 and event == 'Voltar':
-        janela2.close()
+        janela2.hide()
         janela1 = janela_login()
 
     if window == janela3 and event == "Voltar":
-        janela3.close()
+        janela3.hide()
         janela1 = janela_login()
 
     if event == "Load Image":
@@ -138,7 +138,7 @@ while True:
             lista_usuarios.append(values['email'])
             lista_senhas.append(values['senha'])
             sg.popup("Cadastrado com sucesso", font=("bold", 15))
-            janela2.close()
+            janela2.hide()
             janela1 = janela_login()
         else:
             sg.popup("As senhas não coincidem", font=("bold", 15))
@@ -147,7 +147,7 @@ while True:
         if values["email"] in lista_usuarios:
             try:
                 if lista_usuarios.index(values["email"]) == lista_senhas.index(values["senha"]):
-                    janela1.close()
+                    janela1.hide()
                     janela3 = janela_3()
                        
                 elif lista_usuarios.index(values["email"]) != lista_senhas.index(values["senha"]):
@@ -168,6 +168,3 @@ while True:
         janela3.Element('bairro').Update(response_json['bairro'])
         janela3.Element('uf').Update(response_json['uf'])
         janela3.Element('cidadee').Update(response_json['localidade'])
-
-        
-        
