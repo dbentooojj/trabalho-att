@@ -1,6 +1,3 @@
-from tkinter import font
-from weakref import finalize
-from xml.dom.minidom import Element
 import PySimpleGUI as sg
 import io, os
 from PIL import Image
